@@ -29,6 +29,10 @@ addons:
     build_command_prepend: "mkdir build && cd build && cmake .."
     build_command: "make"
     branch_pattern: coverity_scan
+
+before_install:
+  - test ${COVERITY_SCAN_BRANCH} != 1 -o ${TRAVIS_JOB_NUMBER##*.} = 1 || exit 0
+
 script:
   - test ${COVERITY_SCAN_BRANCH} != 1 || exit 0
   - mkdir build
