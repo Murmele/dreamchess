@@ -8,16 +8,12 @@ env:
 
 os:
   - linux
-  - osx
 
 compiler:
-  - gcc
   - clang
+  - gcc
 
 matrix:
-  exclude:
-  - os: osx
-    compiler: gcc
   include:
   - os: osx
     osx_image: xcode8
