@@ -92,6 +92,8 @@ void audio_init(void)
 
 	SDL_Init(SDL_INIT_AUDIO);
 
+	return;
+
 	if (Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers)) {
 		DBG_ERROR("unable to open audio");
 		return;
